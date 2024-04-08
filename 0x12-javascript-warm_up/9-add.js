@@ -14,5 +14,5 @@ else if (isNaN(y)) {
   console.log('Nan');
 }
 else {
-  console.log(addx.(x, y));
+  console.log(add(x, y));
 }
