@@ -1,20 +1,13 @@
 #!/bin/bash
 
-# Check if the user has provided a URL
+# Check if URL is provided as an argument
 if [ $# -ne 1 ]; then
     echo "Usage: $0 <URL>"
     exit 1
 fi
 
-URL=$1
+# Send request to the URL using curl and get the size of the response body in bytes
+response_size=$(curl -sI "$1" | grep -i "content-length" | awk '{print $2}')
 
-# Send a GET request to the URL using curl, and pipe the output to wc to count bytes
-SIZE=$(curl -sI "$URL" | grep -i Content-Length | awk '{print $2}')
-
-# Check if Content-Length header exists
-if [ -z "$SIZE" ]; then
-    echo "Could not determine content size."
-    exit 1
-fi
-
-echo "$SIZE"
+# Display the size of the response body
+echo "$response_size"
