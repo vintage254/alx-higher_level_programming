@@ -1,1 +1,2 @@
+#time complexity for task 6 peak
 O(log n)
