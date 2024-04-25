@@ -6,18 +6,10 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-# Send a GET request to the URL and save the response body to a temporary file
-response_file=$(mktemp)
-curl -s -o "$response_file" -w "%{http_code}" "$1" > /dev/null
+response=$(curl -s -o /dev/null -w "%{http_code}" "$1")
 
-# Check the HTTP status code
-http_code=$(cat "$response_file")
-if [ "$http_code" == "200" ]; then
-    # Display the body of the response
-    cat "$response_file"
+if [ "$response" == "200" ]; then
+    curl -s "$1"
 else
-    echo "Received wrong HTTP status code $http_code. Body not displayed."
+    echo "Received HTTP status code $response. Body not displayed."
 fi
-
-# Clean up temporary file
-rm "$response_file"
