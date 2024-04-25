@@ -9,7 +9,7 @@ fi
 response=$(curl -s -w "%{http_code}" "$1")
 
 if [ "$response" == "200" ]; then
-    curl -s "$1"
+    echo "$response"
 else
     echo "Received HTTP status code $response. Body not displayed."
 fi
