@@ -6,7 +6,7 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-response=$(curl -s -o /dev/null -w "%{http_code}" "$1")
+response=$(curl -s -w "%{http_code}" "$1")
 
 if [ "$response" == "200" ]; then
     curl -s "$1"
