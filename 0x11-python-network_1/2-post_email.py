@@ -16,8 +16,6 @@ if __name__ == "__main__":
 
     data = urllib.parse.urlencode({'email': email}).encode('ascii')
 
-    """ Make the POST request"""
     with urllib.request.urlopen(url, data=data) as response:
-        """ Read and decode the response """
         decoded_response = response.read().decode('utf-8')
         print("Your email is:",decoded_response)
