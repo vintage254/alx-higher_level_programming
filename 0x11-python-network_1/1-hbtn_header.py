@@ -3,7 +3,8 @@ import urllib.request
 import sys
 
 
-""" script that takes in a URL as an argument, sends a request to the URL using urllib, and displays the value of the X-Request-Id variable"""
+""" script that takes in a URL as an argument,
+sends a request to the URL using urllib"""
 
 
 if __name__ == "__main__":
