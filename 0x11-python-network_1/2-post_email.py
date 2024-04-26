@@ -14,11 +14,10 @@ if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
 
-    # Encode the email parameter
     data = urllib.parse.urlencode({'email': email}).encode('ascii')
 
-    # Make the POST request
+    """ Make the POST request"""
     with urllib.request.urlopen(url, data=data) as response:
-        # Read and decode the response
+        """ Read and decode the response """
         decoded_response = response.read().decode('utf-8')
-        print(decoded_response)
+        print("Your email is:",decoded_response)
