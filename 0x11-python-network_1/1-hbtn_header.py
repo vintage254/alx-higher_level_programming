@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import urllib.request
+import urllib
 import sys
 
 
