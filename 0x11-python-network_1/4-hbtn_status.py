@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 
-"""uses requests package to fetch the URL and display the body of the response"""
+"""uses requests package to fetch the URL
+diisplay the body of the response"""
 
 
 import requests
