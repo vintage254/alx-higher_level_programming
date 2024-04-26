@@ -16,7 +16,7 @@ if __name__ == "__main__":
     auth = (username, password)
 
     # URL for the GitHub API to get user information
-    url = f'https://api.github.com/users/{vintage254}'
+    url = f'https://api.github.com/users/{username}'
 
     # Send GET request with Basic Authentication
     response = requests.get(url, auth=auth)
